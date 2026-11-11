@@ -1,0 +1,23 @@
+If:
+  PathMatch: '.*\.(cpp|hpp)$'
+CompileFlags:
+  Compiler: /usr/bin/c++
+  Remove:
+    - -std=*
+  Add:
+    - -std=c++17
+    - -I../src
+    - -I../third_party/uselibpng
+    - -isystem/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
+
+---
+
+If:
+  PathMatch: '.*\.c$'
+CompileFlags:
+  Compiler: /usr/bin/cc
+  Remove:
+    - -std=*
+  Add:
+    - -std=c11
+    - -I../third_party/uselibpng
